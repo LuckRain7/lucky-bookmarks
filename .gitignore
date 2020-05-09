@@ -111,6 +111,7 @@ dist
 /npm-debug.log*
 /yarn-error.log
 /yarn.lock
+yarn.lock
 /package-lock.json
 
 # production
