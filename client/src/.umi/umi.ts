@@ -6,7 +6,7 @@ import { ApplyPluginsType } from 'C:/Users/ZHCZ/Desktop/code/lucky-bookmarks/cli
 import { renderClient } from 'C:/Users/ZHCZ/Desktop/code/lucky-bookmarks/client/node_modules/@umijs/renderer-react/dist/index.js';
 
 
-
+require('../global.less');
 
 const getClientRender = (args: { hot?: boolean } = {}) => plugin.applyPlugins({
   key: 'render',

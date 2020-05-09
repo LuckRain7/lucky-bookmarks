@@ -6,6 +6,11 @@ const routes = [
     "path": "/",
     "component": require('@/pages/index').default,
     "exact": true
+  },
+  {
+    "path": "/login",
+    "component": require('@/pages/login').default,
+    "exact": true
   }
 ];
 
