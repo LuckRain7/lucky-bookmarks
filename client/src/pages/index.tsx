@@ -1,17 +1,25 @@
 import React from 'react';
-import styles from './index.less';
+import { Layout } from 'antd';
 
-import { connect } from 'dva';
+import MyHeader from '../components/Header'; // 分离头部组件
+import Home from './home/index';
 
-const index = (props: any) => {
-  const { user } = props;
+import './index.less';
 
+const { Content, Footer, Sider } = Layout;
+
+const index = () => {
   return (
-    <div>
-      <h1 className={styles.title}>Page index</h1>
-      <h1 className={styles.title}>{user.isLogin}</h1>
-    </div>
+    <Layout>
+      {/* 头部 */}
+      <MyHeader />
+      <Home />
+
+      {/* 底部 */}
+      <Footer style={{ textAlign: 'center' }}>
+        Lucky Bookmarks ©2020 Created by LuckRain7
+      </Footer>
+    </Layout>
   );
 };
-
-export default connect(({ user }) => ({ user }))(index);
+export default index;

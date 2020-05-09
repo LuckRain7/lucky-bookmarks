@@ -103,15 +103,5 @@ const render = props => {
   );
 };
 
-// export default connect(
-//   state => ({
-//     user: state.user, //获取指定命名空间的模型状态
-//   }),
-//   {
-//     addUser: user => ({
-//       type: 'user/addUser',
-//       user,
-//     }),
-//   },
-// )(render);
+
 export default connect(({ user }) => ({ user }))(render);
