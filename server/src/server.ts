@@ -4,7 +4,7 @@
  * @Date: 2020-04-28 18:51:40
  */
 import app from './app'
-const PORT = 3000;
+const PORT = 7778;
 
 app.listen(PORT, () => {
     console.log(`Express server listening on port ${PORT}`);
