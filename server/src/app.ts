@@ -9,6 +9,7 @@ import cors from 'cors' // 跨域模块
 import morgan from 'morgan' // 日志模块
 import path from 'path' // node path
 import Router from './routes/index'
+import MongoDB from './MongoDB/link'// 导入数据库
 
 
 
@@ -16,10 +17,13 @@ class App {
     public app: express.Application;
     constructor() {
         this.app = express();
+        MongoDB()
         this.config()
         this.router()
     }
     private config() {
+
+
         // 开启 cors
         this.app.use(cors())
 
@@ -40,8 +44,10 @@ class App {
         // 注入主页路由
         this.app.use(Router.homeRoutes)
 
+
         // 注入用户路由
         this.app.use(Router.userRoutes)
+        this.app.use(Router.adminRoutes)
     }
 
 }
