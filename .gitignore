@@ -112,6 +112,7 @@ dist
 /yarn-error.log
 /yarn.lock
 yarn.lock
+*.lock
 /package-lock.json
 
 # production
