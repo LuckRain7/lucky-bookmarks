@@ -1,0 +1,16 @@
+{
+  "name": "lucky-bookmarks",
+  "version": "1.0.0",
+  "description": "A web bookmarks",
+  "main": "",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "restart": "rimraf dist && npm run build && npm start",
+    "start": "node ./dist/server.js",
+    "prod": "npm run build && npm run start"
+  },
+  "keywords": [],
+  "author": "luckrain7<luckrain7@foxmail.com>",
+  "license": "MIT"
+}
