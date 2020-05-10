@@ -15,7 +15,7 @@ Express + TypeScript + MongoDB
 
 #### 客户端
 
-Umi(^3.1.4)
+Vue
 
 ##### TODO
 
