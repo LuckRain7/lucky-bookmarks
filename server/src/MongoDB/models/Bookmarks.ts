@@ -13,7 +13,8 @@ const schema = new Schema({
     title: { type: String, }, // 标题
     url: { type: String }, // 链接地址
     newDate: { type: String },
-    category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" }
+    category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
+    icon: { type: String } // 
 });
 
 const Bookmark = mongoose.model('Bookmark', schema, 'Bookmark')

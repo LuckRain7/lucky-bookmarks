@@ -9,11 +9,7 @@ import Bookmarks from '../MongoDB/models/Bookmarks'
 
 
 
-// const initData = [
-//     { name: 'Vue Router', id: '1.1', parent: '1' },
-//     { name: 'Vuex', id: '1.2', parent: '1' },
-//     { name: 'Vue Cli', id: '1.3', parent: '1' },
-// ]
+
 
 class BookmarksController {
     static get = async (req: Request, res: Response) => {
@@ -27,14 +23,6 @@ class BookmarksController {
             })
         })
     }
-    // static init = async (req: Request, res: Response) => {
-    //     Bookmarks.collection.insert(initData, (err, allInfo) => {
-    //         if (err) {
-    //             res.send(err)
-    //         }
-    //         res.send(allInfo)
-    //     })
-    // }
 
     static find = async (req: Request, res: Response) => {
         Bookmarks.find({ category: req.params.category }, (err, data) => {
@@ -46,11 +34,11 @@ class BookmarksController {
     }
 
     static post = async (req: Request, res: Response) => {
-        Bookmarks.create(req.body, (err, info) => {
+        Bookmarks.create(req.body, (err, data) => {
             if (err) {
-                res.send(err)
+                res.send({ code: 1, err })
             }
-            res.send(info)
+            res.send({ code: 0 })
         })
     }
 

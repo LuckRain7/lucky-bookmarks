@@ -16,11 +16,12 @@ router.route('/category')
 
 router.route('/category/:id').delete(CategoryController.delete)
 
+// 书签
 router.route('/bookmarks')
     .post(BookmarksController.post)
     .put(BookmarksController.put)
 
-router.route('/bookmarks/:id')
+router.route('/bookmarks/:category')
     .delete(BookmarksController.delete)
     .get(BookmarksController.find)
 
