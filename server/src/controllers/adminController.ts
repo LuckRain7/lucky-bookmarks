@@ -14,10 +14,10 @@ class adminController {
     }
 }
 
-const initData = [{ name: '前端', id: '1' },
-{ name: 'Vue', id: '2' },
-{ name: 'React', id: '3' },
-{ name: 'WebGIS', id: '4' }
+const initData = [
+    { name: 'OpenLayer', id: '4.1', parent: '4' },
+    { name: 'Cesium', id: '4.2', parent: '4' },
+    { name: 'ArcGIS', id: '4.3', parent: '4' },
 ]
 
 class CategoryController {
@@ -39,7 +39,6 @@ class CategoryController {
             }
             res.send(allInfo)
         })
-
     }
 
     static getById = async (req: Request, res: Response) => {

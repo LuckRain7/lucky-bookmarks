@@ -8,7 +8,9 @@ import { CategoryController } from '../controllers/adminController'
 
 const router = Router()
 
-router.route('/category').get(CategoryController.get)
+router.route('/category')
+    .get(CategoryController.get)
+    // .get(CategoryController.init)
     .post(CategoryController.post)
     .post(CategoryController.delete)
     .put(CategoryController.put)
