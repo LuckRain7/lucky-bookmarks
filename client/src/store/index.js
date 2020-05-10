@@ -11,14 +11,21 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    addCategoryShow: true,
+    addCategoryShow: false, // 添加标签弹窗
     categoryList: [],
+    EditCategoryVisible: false, // 编辑标签弹窗
+    EditCategoryData: {}, // 编辑标签数据
   },
   mutations: {
     setCategoryShow(state, data) {
       state.addCategoryShow = data;
     },
-    // 设置类型列表
+    setEditCategoryVisible(state, data) {
+      state.EditCategoryVisible = data;
+    },
+    setEditCategoryData(state, data) {
+      state.EditCategoryData = data;
+    },
     setCategoryList(state, data) {
       state.categoryList = data;
     },

@@ -33,11 +33,14 @@
             <!-- 夫类型 -->
             <template v-for="itemP in category">
               <a-sub-menu :key="itemP.id">
-                <span slot="title"><a-icon type="user" />{{ itemP.name }}</span>
+                <span slot="title">
+                  <edit-icon :data="itemP" />{{ itemP.name }}
+                </span>
                 <!-- 子类型 -->
                 <template v-for="itemC in itemP.children">
                   <a-menu-item :key="itemC.id">
-                    {{ itemC.id }} - {{ itemC.name }}
+                    <edit-icon :data="itemC" /> {{ itemC.id }} -
+                    {{ itemC.name }}
                   </a-menu-item>
                 </template>
               </a-sub-menu>
@@ -55,12 +58,15 @@
     </a-layout-footer>
     <!-- 弹窗 -->
     <add-category></add-category>
+    <edit-category></edit-category>
     <!-- 弹窗 END -->
   </a-layout>
 </template>
 <script>
 // import Http from "@/service/index";
 import AddCategory from "./AddCategory.vue";
+import EditCategory from "./EditCategory.vue";
+import EditIcon from "./Edit.vue";
 export default {
   data() {
     return {
@@ -82,6 +88,8 @@ export default {
   mounted() {},
   components: {
     AddCategory,
+    EditIcon,
+    EditCategory,
   },
   computed: {
     // 获取 书签类型

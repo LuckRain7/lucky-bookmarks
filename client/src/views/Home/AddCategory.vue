@@ -27,7 +27,7 @@
             v-for="item in category"
             :key="item.id"
           >
-            {{ item.id }} - {{ item.name }}
+            {{ item.id }} - {{ item.name }} 
           </a-select-option>
         </a-select>
       </a-form-item>
@@ -57,35 +57,35 @@ export default {
   },
   beforeCreate() {},
   methods: {
-    handleSubmit(e) {
-      console.log(e);
-    },
-
+    // 点击确定
     handleOk() {
+      // 格式化数据
       const CategoryForm = this.CategoryForm;
-
       const res = {
         id: CategoryForm.id,
         name: CategoryForm.name,
       };
       CategoryForm.parent !== "0" && (res.parent = CategoryForm.parent);
 
-      console.log(res);
+      // 开启加载模式
+      this.confirmLoading = true;
 
+      // console.log(res);
+
+      // 发送请求 创建标签
       Http.Category.addCategory(res).then((data) => {
         console.log(data);
       });
 
-      // this.ModalText = "The modal will be closed after two seconds";
-      // this.confirmLoading = true;
-      // setTimeout(() => {
-      //   this.$store.commit("setCategoryShow", false); // 关闭弹窗
-      //   this.confirmLoading = false;
-      // }, 2000);
+      // 延迟关闭
+      setTimeout(() => {
+        this.$store.commit("setCategoryShow", false); // 关闭弹窗
+        this.confirmLoading = false;
+        this.$store.dispatch("getCategoryList"); // 重新获取数据
+      }, 1000);
     },
+    // 关闭弹窗
     handleCancel() {
-      console.log("Clicked cancel button");
-
       this.$store.commit("setCategoryShow", false); // 关闭弹窗
     },
   },

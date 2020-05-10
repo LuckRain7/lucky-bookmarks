@@ -55,4 +55,30 @@ const addCategory = function(data) {
   });
 };
 
-export default { getData, addCategory };
+const updateCategory = function(data) {
+  return new Promise((resolve, reject) => {
+    axios
+      .put(URL().categoryUrl, data)
+      .then((data) => {
+        resolve(data);
+      })
+      .catch(function(error) {
+        reject(error);
+      });
+  });
+};
+
+const deleteCategory = function(data) {
+  return new Promise((resolve, reject) => {
+    axios
+      .delete(URL().categoryUrl + "/" + data)
+      .then((data) => {
+        resolve(data);
+      })
+      .catch(function(error) {
+        reject(error);
+      });
+  });
+};
+
+export default { getData, addCategory, updateCategory, deleteCategory };
