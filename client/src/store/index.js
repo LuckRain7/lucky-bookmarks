@@ -17,6 +17,8 @@ export default new Vuex.Store({
     EditCategoryData: {}, // 编辑标签数据
     category: {}, // 所选标签
     addBookmarkShow: false,
+    addBookmarkShowType: "", // 编辑 or 新增
+    editBookmarkSData: {}, // 需要编辑的数据
   },
   mutations: {
     setCategoryShow(state, data) {
@@ -36,6 +38,12 @@ export default new Vuex.Store({
     },
     setAddBookmarkShow(state, data) {
       state.addBookmarkShow = data;
+    },
+    setAddBookmarkShowType(state, data) {
+      state.addBookmarkShowType = data;
+    },
+    setEditBookmarkSData(state, data) {
+      state.editBookmarkSData = data;
     },
   },
   actions: {

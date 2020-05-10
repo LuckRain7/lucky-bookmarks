@@ -26,26 +26,42 @@ export default {
   },
   methods: {
     handleAdd() {
-      this.$store.commit("setAddBookmarkShow", true); // 关闭弹窗
+      this.$store.commit("setAddBookmarkShowType", 2); // 新增弹窗
+      this.$store.commit("setAddBookmarkShow", true); // 新增弹窗
     },
     open(url) {
       window.open(url, "_blank");
     },
     handleEdit(ev) {
-      console.log(ev);
+      this.$store.commit("setAddBookmarkShow", true); // 编辑弹窗
+      this.$store.commit("setAddBookmarkShowType", 1); // 编辑弹窗
+      this.$store.commit("setEditBookmarkSData", ev); // 传入需要编辑的数据
     },
     handleDelete(ev) {
-      console.log(ev);
+      http.Bookmarks.deleteBookmarks(ev._id).then((data) => {
+        console.log(data);
+        this.getRenderData(this.$route); // 重置数据
+        this.$message.info("删除成功");
+      });
     },
-  },
-  watch: {
-    "$store.state.category": function(ev) {
-      // 获取
-      const { _id } = ev;
+    // 获取渲染数据
+    getRenderData(_route) {
+      // 通过 _id 获取
+      const _id = _route.query.id;
       http.Bookmarks.getDataByCategory(_id).then((data) => {
         console.log(data);
         this.renderData = data;
       });
+    },
+  },
+  mounted() {
+    // 获取渲染数据
+    this.getRenderData(this.$route);
+  },
+  watch: {
+    // 根据路由约定 获取渲染数据
+    $route: function(to) {
+      this.getRenderData(to);
     },
   },
 };

@@ -34,10 +34,10 @@ const addBookmarks = function(data) {
   });
 };
 
-const updateCategory = function(data) {
+const updateBookmarks = function(data) {
   return new Promise((resolve, reject) => {
     axios
-      .put(URL().categoryUrl, data)
+      .put(URL().bookmarksUrl, data)
       .then((data) => {
         resolve(data);
       })
@@ -47,10 +47,10 @@ const updateCategory = function(data) {
   });
 };
 
-const deleteCategory = function(data) {
+const deleteBookmarks = function(data) {
   return new Promise((resolve, reject) => {
     axios
-      .delete(URL().categoryUrl + "/" + data)
+      .delete(URL().bookmarksUrl + "/" + data)
       .then((data) => {
         resolve(data);
       })
@@ -63,6 +63,6 @@ const deleteCategory = function(data) {
 export default {
   getDataByCategory,
   addBookmarks,
-  updateCategory,
-  deleteCategory,
+  updateBookmarks,
+  deleteBookmarks,
 };

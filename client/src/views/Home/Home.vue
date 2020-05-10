@@ -50,7 +50,7 @@
         </a-layout-sider>
 
         <!-- 内容 GO-->
-        <my-content></my-content>
+        <router-view></router-view>
         <!-- 内容 END-->
       </a-layout>
     </a-layout-content>
@@ -69,7 +69,6 @@
 import AddCategory from "./AddCategory.vue";
 import EditCategory from "./EditCategory.vue";
 import EditIcon from "./Edit.vue";
-import MyContent from "./Content.vue";
 import AddBookmark from "./AddBookMark.vue";
 export default {
   data() {
@@ -88,6 +87,7 @@ export default {
     },
     handleMenu(ev) {
       this.$store.commit("setCategory", ev);
+      this.$router.push({ path: "/search", query: { id: ev._id } });
     },
   },
   mounted() {},
@@ -95,7 +95,7 @@ export default {
     AddCategory,
     EditIcon,
     EditCategory,
-    MyContent,
+
     AddBookmark,
   },
   computed: {
