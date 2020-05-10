@@ -60,13 +60,22 @@ class CategoryController {
     }
 
     static put = async (req: Request, res: Response) => {
-        console.log('get');
-        res.send('category')
+        const body = req.body
+        Category.findOneAndUpdate({ _id: body._id }, body, (err, userInfo) => {
+            if (err) {
+                res.send({ code: 1, err })
+            }
+            res.send({ code: 0 })
+        })
     }
 
     static delete = async (req: Request, res: Response) => {
-        console.log('get');
-        res.send('category')
+        Category.remove({ _id: req.params.id }, (err) => {
+            if (err) {
+                res.send({ code: 1, err })
+            }
+            res.send({ code: 0 })
+        })
     }
 }
 

@@ -9,7 +9,7 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
     name: { type: String, },
-    num: { type: Number },
+    id: { type: String },
     parent: { type: String },
 });
 

@@ -10,10 +10,10 @@ const router = Router()
 
 router.route('/category')
     .get(CategoryController.get)
-    // .get(CategoryController.init)
     .post(CategoryController.post)
-    .post(CategoryController.delete)
     .put(CategoryController.put)
+
+router.route('/category/:id').delete(CategoryController.delete)
 
 
 export default router
