@@ -1,5 +1,5 @@
 /*
- *  Description:  
+ *  Description:
  *  Author: LuckRain7
  *  Date: 2020-05-10 11:23:26
  */
@@ -9,7 +9,8 @@ const admin_url = "api/admin/";
 const URL = function() {
   return {
     categoryUrl: base_url + admin_url + "category",
+    bookmarksUrl: base_url + admin_url + "bookmarks",
   };
 };
 
-export default URL
+export default URL;

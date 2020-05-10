@@ -6,5 +6,6 @@
 
 import URL from "./url";
 import Category from "./actions/category";
+import Bookmarks from "./actions/bookmarks";
 
-export default { URL, Category };
+export default { URL, Category, Bookmarks };

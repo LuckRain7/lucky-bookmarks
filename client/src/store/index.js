@@ -15,6 +15,8 @@ export default new Vuex.Store({
     categoryList: [],
     EditCategoryVisible: false, // 编辑标签弹窗
     EditCategoryData: {}, // 编辑标签数据
+    category: {}, // 所选标签
+    addBookmarkShow: false,
   },
   mutations: {
     setCategoryShow(state, data) {
@@ -28,6 +30,12 @@ export default new Vuex.Store({
     },
     setCategoryList(state, data) {
       state.categoryList = data;
+    },
+    setCategory(state, data) {
+      state.category = data;
+    },
+    setAddBookmarkShow(state, data) {
+      state.addBookmarkShow = data;
     },
   },
   actions: {

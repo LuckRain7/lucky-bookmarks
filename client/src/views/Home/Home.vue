@@ -38,7 +38,7 @@
                 </span>
                 <!-- 子类型 -->
                 <template v-for="itemC in itemP.children">
-                  <a-menu-item :key="itemC.id">
+                  <a-menu-item :key="itemC.id" @click="handleMenu(itemC)">
                     <edit-icon :data="itemC" /> {{ itemC.id }} -
                     {{ itemC.name }}
                   </a-menu-item>
@@ -48,9 +48,10 @@
           </a-menu>
           <!-- 菜单 END -->
         </a-layout-sider>
-        <a-layout-content :style="{ padding: '0 24px', minHeight: '280px' }">
-          Content
-        </a-layout-content>
+
+        <!-- 内容 GO-->
+        <my-content></my-content>
+        <!-- 内容 END-->
       </a-layout>
     </a-layout-content>
     <a-layout-footer style="text-align: center">
@@ -59,6 +60,7 @@
     <!-- 弹窗 -->
     <add-category></add-category>
     <edit-category></edit-category>
+    <add-bookmark></add-bookmark>
     <!-- 弹窗 END -->
   </a-layout>
 </template>
@@ -67,11 +69,12 @@
 import AddCategory from "./AddCategory.vue";
 import EditCategory from "./EditCategory.vue";
 import EditIcon from "./Edit.vue";
+import MyContent from "./Content.vue";
+import AddBookmark from "./AddBookMark.vue";
 export default {
   data() {
     return {
       // category: [],
-
       confirmLoading: false,
     };
   },
@@ -79,10 +82,12 @@ export default {
     handleSubmit() {
       // 提交标签
     },
-
     // 添加书签
     addCatrgery() {
       this.$store.commit("setCategoryShow", true); // 打开弹窗
+    },
+    handleMenu(ev) {
+      this.$store.commit("setCategory", ev);
     },
   },
   mounted() {},
@@ -90,6 +95,8 @@ export default {
     AddCategory,
     EditIcon,
     EditCategory,
+    MyContent,
+    AddBookmark,
   },
   computed: {
     // 获取 书签类型
