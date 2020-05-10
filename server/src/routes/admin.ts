@@ -5,6 +5,7 @@
  */
 import { Router } from 'express'
 import { CategoryController } from '../controllers/adminController'
+import BookmarksController from '../controllers/BookmarksController'
 
 const router = Router()
 
@@ -14,6 +15,16 @@ router.route('/category')
     .put(CategoryController.put)
 
 router.route('/category/:id').delete(CategoryController.delete)
+
+router.route('/bookmarks')
+    .post(BookmarksController.post)
+    .put(BookmarksController.put)
+
+router.route('/bookmarks/:id')
+    .delete(BookmarksController.delete)
+    .get(BookmarksController.find)
+
+
 
 
 export default router
