@@ -53,7 +53,7 @@ class BookmarksController {
     }
 
     static delete = async (req: Request, res: Response) => {
-        Bookmarks.remove({ _id: req.params.id }, (err) => {
+        Bookmarks.remove({ _id: req.params.category }, (err) => {
             if (err) {
                 res.send({ code: 1, err })
             }

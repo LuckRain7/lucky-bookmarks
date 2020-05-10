@@ -61,7 +61,7 @@ class CategoryController {
 
     static put = async (req: Request, res: Response) => {
         const body = req.body
-        Category.findOneAndUpdate({ _id: body._id }, body, (err, userInfo) => {
+        Category.findOneAndUpdate({ _id: body._id }, body, (err, data) => {
             if (err) {
                 res.send({ code: 1, err })
             }
