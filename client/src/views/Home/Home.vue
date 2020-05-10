@@ -10,7 +10,7 @@
       <div class="logo">Web Bookmarks</div>
     </a-layout-header>
     <!-- 内容 -->
-    <a-layout-content style="padding: 0 50px" class="content-layout">
+    <a-layout-content style="padding: 0 50px" class="main-layout">
       <a-breadcrumb style="margin: 16px 0">
         <a-breadcrumb-item>Home</a-breadcrumb-item>
         <a-breadcrumb-item>List</a-breadcrumb-item>
@@ -21,8 +21,8 @@
         </div>
       </a-breadcrumb>
 
-      <a-layout style="padding: 24px 0; background: #fff">
-        <a-layout-sider width="200" style="background: #fff">
+      <a-layout style="padding: 24px 0; background: #fff" class="content-layout">
+        <a-layout-sider width="300" style="background: #fff; overflow: auto;">
           <!-- 菜单 GO -->
           <a-menu
             mode="inline"
