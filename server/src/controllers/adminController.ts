@@ -15,9 +15,9 @@ class adminController {
 }
 
 const initData = [
-    { name: 'OpenLayer', id: '4.1', parent: '4' },
-    { name: 'Cesium', id: '4.2', parent: '4' },
-    { name: 'ArcGIS', id: '4.3', parent: '4' },
+    { name: 'Vue Router', id: '1.1', parent: '1' },
+    { name: 'Vuex', id: '1.2', parent: '1' },
+    { name: 'Vue Cli', id: '1.3', parent: '1' },
 ]
 
 class CategoryController {

@@ -8,7 +8,13 @@
     <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  mounted() {
+    this.$store.dispatch("getCategoryList"); // 获取类型列表
+  },
+};
+</script>
 <style lang="less">
 body,
 html,

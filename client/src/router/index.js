@@ -1,11 +1,11 @@
 /*
- *  Description:  
+ *  Description:
  *  Author: LuckRain7
  *  Date: 2020-05-10 10:13:19
  */
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "../views/Home/Home.vue";
 
 Vue.use(VueRouter);
 

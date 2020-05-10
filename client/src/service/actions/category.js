@@ -42,6 +42,17 @@ const getData = function() {
   });
 };
 
-const a = 10;
+const addCategory = function(data) {
+  return new Promise((resolve, reject) => {
+    axios
+      .post(URL().categoryUrl, data)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch(function(error) {
+        reject(error);
+      });
+  });
+};
 
-export default { getData, a };
+export default { getData, addCategory };
