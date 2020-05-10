@@ -6,7 +6,7 @@
 export default () => {
     const mongoose = require("mongoose");
 
-    const URL = "mongodb://rainbook:<rain1admin>@192.168.70.129:27017/bookmarks";
+    const URL = "mongodb://rainbook:<rain1admin>@101.132.103.213:27017/bookmarks";
 
     mongoose.connect(URL, {
         useNewUrlParser: true,
