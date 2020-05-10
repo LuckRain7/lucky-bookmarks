@@ -51,16 +51,12 @@ class CategoryController {
     }
 
     static post = async (req: Request, res: Response) => {
-
-        console.log(req.body);
-        res.send(req.body)
-
-        // Category.create(req.body, (err, info) => {
-        //     if (err) {
-        //         res.send(err)
-        //     }
-        //     res.send(info)
-        // })
+        Category.create(req.body, (err, info) => {
+            if (err) {
+                res.send(err)
+            }
+            res.send(info)
+        })
     }
 
     static put = async (req: Request, res: Response) => {
