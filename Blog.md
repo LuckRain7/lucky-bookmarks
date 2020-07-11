@@ -1,6 +1,9 @@
 # Blog
 
-## 中文
+[Chinese](#Chinese)
+[English](#English)
+
+## Chinese
 
 [淘系前端团队（FED）用技术为体验提供无限可能](https://fed.taobao.org/)
 
@@ -58,7 +61,7 @@
 
 [唐霜的博客\_编程的时候我叫“否子戈”！](https://www.tangshuang.net/)
 
-##  英文
+## English
 
 [Blog - Advanced Web Machinery](https://advancedweb.hu/)
 
@@ -104,4 +107,4 @@
 
 [Level Up Coding](https://levelup.gitconnected.com/)
 
-[](https://www.takeshape.io/articles/why-we-switched-from-yarn-to-pnpm/)
+[takeshape](https://www.takeshape.io/articles/why-we-switched-from-yarn-to-pnpm/)
