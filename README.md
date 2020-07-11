@@ -1,4 +1,4 @@
 # lucky-bookmarks
 A web bookmarks
 
-[Blog]()
+[Blog](./blob/master/Blog.md)
