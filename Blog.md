@@ -1,7 +1,8 @@
 # Blog
 
-[Chinese](#Chinese)
-[English](#English)
+> [Chinese](#Chinese)
+>
+> [English](#English)
 
 ## Chinese
 
