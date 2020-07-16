@@ -1,10 +1,22 @@
 {
   "name": "lucky-bookmarks",
   "version": "1.0.0",
-  "description": "A web bookmarks",
-  "main": "",
-  "scripts": {},
-  "keywords": [],
-  "author": "luckrain7<luckrain7@foxmail.com>",
-  "license": "MIT"
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "export": "nuxt export",
+    "serve": "nuxt serve"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.11.0",
+    "ant-design-vue": "^1.6.2",
+    "nuxt": "^2.13.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  }
 }
