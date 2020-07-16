@@ -33,7 +33,7 @@ export default {}
   /* display: inline; */
   height: 80%;
   width: auto;
-  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .main-bookmarks {
